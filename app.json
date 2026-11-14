@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "My AI Cal Pal",
+    "slug": "my-ai-cal-pal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.myaicalpal.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow My AI Cal Pal to access your camera to capture food photos for nutritional analysis.",
+        "NSPhotoLibraryUsageDescription": "Allow My AI Cal Pal to access your photos to select food images for nutritional analysis.",
+        "NSHealthShareUsageDescription": "Allow My AI Cal Pal to access Apple Health to check dietary metrics.",
+        "NSHealthUpdateUsageDescription": "Allow My AI Cal Pal to save dietary energy and macronutrients directly to Apple Health."
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow My AI Cal Pal to access your camera to capture food photos for nutritional analysis."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow My AI Cal Pal to access your photos to select food images for nutritional analysis."
+        }
+      ],
+      [
+        "react-native-health",
+        {
+          "healthSharePermission": "Allow My AI Cal Pal to access Apple Health to check dietary metrics.",
+          "healthUpdatePermission": "Allow My AI Cal Pal to save dietary energy and macronutrients directly to Apple Health.",
+          "isClinicalDataEnabled": false
+        }
+      ]
+    ]
+  }
+}
